@@ -98,7 +98,7 @@ export const reply = {
       color: settings.colors.primary,
       clear: true,
       embed: {
-        author: createEmbedAuthor({ user }),
+        author: createEmbedAuthor( user ),
       },
       ...options,
     });
