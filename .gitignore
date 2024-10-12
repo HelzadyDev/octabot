@@ -10,6 +10,7 @@
 /.env.dev
 /.env.development
 /package-lock.json
+/yarn.lock
 
 # Config files
 /firebase.json
