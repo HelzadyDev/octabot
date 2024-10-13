@@ -18,7 +18,8 @@ interface ReplyOptions {
   content?: string;
 }
 
-interface EmbedReplyOptions extends ReplyOptions {
+interface EmbedReplyOptions extends Omit<ReplyOptions, "text"> {
+  text?: string;
   color: string;
   embed?: EmbedData;
 }
