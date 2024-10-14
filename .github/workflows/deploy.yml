@@ -1,0 +1,39 @@
+name: Deploy to Discloud
+
+on:
+  push:
+    branches:
+      - main  # Ou a branch que você deseja monitorar
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checa o código no repositório
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Instala o Node.js (caso necessário)
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Versão do Node.js que você está utilizando
+
+    # Instala as dependências
+    - name: Install dependencies
+      run: npm install
+
+    # Builda o projeto
+    - name: Build the project
+      run: npm run build
+
+    # Faz o deploy para o Discloud
+    - name: Deploy to Discloud
+      env:
+        DISCLOUD_TOKEN: ${{ secrets.eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Ijg5NjI1NzM1ODgzNjE3MDc4MiIsImtleSI6ImQwNjhjMjU1Y2E2MTkxMDY4NTc2NjcwYzdkN2IifQ.iS6ywEOtDca-CSA_fkaYbvXR2-Rs9WrKF5gEAHSmRMU }}
+      run: |
+        curl -X POST "https://api.discloud.app/v2/app/upload" \
+        -H "api-token: $DISCLOUD_TOKEN" \
+        -F "file=@$(git archive -o app.zip HEAD)" \
+        -F "type=bot" # Trocar "bot" pelo tipo correto se não for bot
