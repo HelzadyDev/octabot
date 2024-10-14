@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "titania",
   "type": "module",
   "main": "build/index.js",
   "scripts": {
