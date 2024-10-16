@@ -25,7 +25,9 @@
     "static":{
       "label": "<:titania_label:1295156229391519835>",
       "id": "<:titania_id:1295156260307603529>",
-      "calendar": "<:titania_calendar:1295156292532568064>"
+      "calendar": "<:titania_calendar:1295156292532568064>",
+      "check": "<:check:1259225649433018448>",
+      "crossmark": "<:crossmark:1259225873266114630>"
     }
   }
 }
