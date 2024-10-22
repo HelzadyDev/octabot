@@ -21,7 +21,9 @@
     "bravery": "#9c84ef"
   },
   "emojis": {
-    "animated": {},
+    "animated": {
+     "louding": "<a:titania_louding:1297392258840264784>" 
+    },
     "static":{
       "label": "<:titania_label:1295156229391519835>",
       "id": "<:titania_id:1295156260307603529>",

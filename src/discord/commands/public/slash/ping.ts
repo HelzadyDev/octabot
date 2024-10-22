@@ -10,7 +10,7 @@ new Command({
   type: ApplicationCommandType.ChatInput,
   async run(interaction) {
 	await interaction.deferReply({ ephemeral });
-    const { client, guild } = interaction;
+    const { client } = interaction;
 
     // Obitem o ping do gateway
     const gatewayping = client.ws.ping;
@@ -20,7 +20,7 @@ new Command({
     await reply.primary({
     	interaction,
 		update: true,
-    	text: "Calculando o ping da API"
+    	text: `Calculando o ping da API ${settings.emojis.animated.louding}`
     })
     
     // calculando o ping
@@ -38,6 +38,6 @@ new Command({
         ),
       },
     });
-	}, 2000);
+	}, 10000);
   },
 });
